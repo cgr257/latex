@@ -1,0 +1,330 @@
+\documentclass[12pt, fleqn]{article}
+\setlength\parindent{0pt}
+\setlength{\mathindent}{0cm}
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ margin=1in,
+ }
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{MnSymbol}
+\usepackage{multicol}
+%\usepackage{amsfonts}
+\usepackage[tableaux]{prooftrees}
+\usepackage{verbatim}
+\usepackage{setspace}
+
+\begin{document}
+
+\begin{multicols}{2}
+\doublespacing
+\hspace*{4.75cm}$\neg$$\square$A, i\\ 
+\hspace*{4.75cm}\hspace*{.75cm}{\Large $\downarrow$}\\
+\hspace*{4.75cm}$\meddiamond$$\neg$A, i\\
+
+\hspace*{3.25cm}$\neg$$\meddiamond$A, i\\ 
+\hspace*{3.25cm}\hspace*{.75cm}{\Large $\downarrow$}\\
+\hspace*{3.25cm}$\square$$\neg$A, i\\
+
+\end{multicols}
+
+\begin{comment}
+$\square$A, i\\ 
+\hspace*{.25cm}iRj\\
+\hspace*{.25cm}{\Large $\downarrow$}\\
+\hspace*{.25cm}Aj\\
+
+$\meddiamond$A, i\\ 
+\hspace*{.25cm}{\Large $\downarrow$}\\
+\hspace*{.25cm}iRj\\
+\hspace*{.25cm}Aj\\
+\end{comment}
+\vspace{.5cm}
+
+\begin{multicols}{2}
+\begin{equation*}
+  \text{Both need to be true}\begin{cases}
+    \square A, i&\\
+    iRj&
+  \end{cases}
+\end{equation*}
+\hspace*{5.25cm}{\Large $\downarrow$}\\
+\hspace*{5cm}A, j\\
+\vspace{1in}
+
+\hspace*{3.75cm}$\meddiamond$A, i\\
+\hspace*{4.25cm}{\Large $\downarrow$}\\
+\begin{equation*}
+  \text{j has to be new}\begin{cases}
+    iRj&\\
+    A,j
+  \end{cases}
+\end{equation*}
+\end{multicols}
+
+\vspace{1cm}
+
+
+
+%below (commented out) are the rules without world indexes
+\begin{comment}
+\begin{multicols}{3}
+%ONE
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[(A \supset B)
+	[\neg A]
+	[B]
+]
+\end{tableau}
+
+\vspace{1cm}
+%TWO
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\neg (A \supset B)
+	[\downarrow 
+		[A
+			[\neg B]
+		]
+	]
+]
+\end{tableau}
+
+\vspace{1cm}
+%THREE
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[(\neg \neg A)
+	[A]
+]
+\end{tableau}
+
+\vspace{1cm}
+%FOUR
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[(A \vee B)
+	[A]
+	[B]
+]
+\end{tableau}
+
+\vspace{1cm}
+%FIVE
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\neg(A \vee B)
+	[\neg A
+		[\neg B]
+	]
+]
+\end{tableau}
+
+
+\vspace{1cm}
+%SIX
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[(A \wedge B)
+	[A
+		[B]
+	]
+]
+\end{tableau}
+
+
+\vspace{1cm}
+%SEVEN
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\neg(A \wedge B)
+	[\neg A]
+	[\neg B]
+]
+\end{tableau}
+
+\vspace{1cm}
+
+
+%Eight
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[(A \equiv B)
+	[A
+		[B]
+	]
+	[\neg A
+		[\neg B]
+	]
+]
+\end{tableau}
+
+
+\vspace{1cm}
+%Nine
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\neg(A \equiv B)
+	[\neg A
+		[B]
+	]
+	[A
+		[\neg B]
+	]
+]
+\end{tableau}
+\end{multicols}
+\end{comment}
+
+
+\begin{multicols}{3}
+%ONE
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[(A \supset B) {,} i
+	[\neg A {,} i]
+	[B {,} i]
+]
+\end{tableau}
+
+\vspace{1cm}
+%TWO
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\neg (A \supset B) {,} i
+	[\downarrow 
+		[A {,} i
+			[\neg B {,} i]
+		]
+	]
+]
+\end{tableau}
+
+\vspace{1cm}
+%THREE
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[(\neg \neg A) {,} i
+	[A {,} i]
+]
+\end{tableau}
+
+\vspace{1cm}
+%FOUR
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[(A \vee B) {,} i
+	[A {,} i]
+	[B {,} i]
+]
+\end{tableau}
+
+\vspace{1cm}
+%FIVE
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\neg(A \vee B) {,} i
+	[\neg A {,} i
+		[\neg B {,} i]
+	]
+]
+\end{tableau}
+
+
+\vspace{1cm}
+%SIX
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[(A \wedge B) {,} i
+	[A {,} i
+		[B {,} i]
+	]
+]
+\end{tableau}
+
+
+\vspace{1cm}
+%SEVEN
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\neg(A \wedge B) {,} i
+	[\neg A {,} i]
+	[\neg B {,} i]
+]
+\end{tableau}
+
+\vspace{1cm}
+
+
+%Eight
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[(A \equiv B) {,} i
+	[A {,} i
+		[B {,} i]
+	]
+	[\neg A {,} i
+		[\neg B {,} i]
+	]
+]
+\end{tableau}
+
+
+\vspace{1cm}
+%Nine
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\neg(A \equiv B) {,} i
+	[\neg A {,} i
+		[B {,} i]
+	]
+	[A {,} i
+		[\neg B {,} i]
+	]
+]
+\end{tableau}
+
+
+
+
+\end{multicols}
+
+\end{document}
