@@ -6,6 +6,8 @@
  a4paper,
  margin=1in,
  }
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{MnSymbol}
@@ -14,7 +16,6 @@
 \usepackage[tableaux]{prooftrees}
 \usepackage{verbatim}
 \usepackage{setspace}
-
 \begin{document}
 
 \begin{multicols}{2}
@@ -321,10 +322,199 @@ $\meddiamond$A, i\\
 	]
 ]
 \end{tableau}
+\end{multicols}
+\pagebreak
+$\rho$ (rho), reflexivity: for all w, wRw.\\
+$\sigma$ (sigma), symmetry: for all w1 , w2 , if w1Rw2 , then w2Rw1.\\
+$\tau$ (tau), transitivity: for all w1, w2, w3, if w1Rw2 and w2Rw3, then w1Rw3\\
+$\eta$ (eta), extendability: for all w1, there is a w2 such that w1Rw2.\\
+
+\begin{multicols}{2}
+%rho
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\rho
+	[\bullet
+		[\downarrow
+			[iRi]
+		]
+	]
+]
+\end{tableau}
+\vspace{.5cm}
+
+%sigma
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\sigma
+	[iRj
+		[\downarrow
+			[jRi]
+		]
+	]
+]
+\end{tableau}
+\vspace{.5cm}
+
+%tau
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\tau
+	[irj
+		[jRk
+			[\downarrow
+				[iRk]
+			]
+		]
+	]
+]
+\end{tableau}
+\vspace{.5cm}
 
 
-
+%eta
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\eta
+	[\bullet
+		[\downarrow
+			[iRj]
+		]
+	]
+]
+\end{tableau}
+\vspace{.5cm}
 
 \end{multicols}
+
+\vspace{.5cm}
+\textbf{Tableaux Rules for C}\\
+\begin{multicols}{2}
+\hspace{3.3cm}A $>$ B, i\\
+\hspace*{3.8cm}iR\textsubscript{A}j\\
+\hspace*{4.0cm}{\Large $\downarrow$}\\
+\hspace*{3.8cm}B, j\\
+\vspace{2cm}
+
+\hspace{2.8cm}$\neg$(A $>$ B), i\\
+\hspace*{4.0cm}{\Large $\downarrow$}\\
+\begin{equation*}
+  \text{j has to be new}\begin{cases}
+    iR_Aj&\\
+    \neg B, j
+  \end{cases}
+\end{equation*}
+\end{multicols}
+
+
+\vspace{.5cm}
+\textbf{Tableaux Rules for C+}\\
+\begin{multicols}{2}
+\hspace{2.8cm}$\neg$(A $>$ B), i\\
+\hspace*{4.0cm}{\Large $\downarrow$}\\
+\begin{equation*}
+  \text{j has to be new}\begin{cases}
+    iR_Aj&\\
+    A,j\\
+    \neg B, j
+  \end{cases}
+\end{equation*}
+
+\begin{tableau}
+  { line numbering = false,
+  for tree={s sep'=10mm},
+  }
+[\bullet 
+	[\neg A {,} i]
+	[A {,} i
+	  [iR_Ai]
+	]
+]
+\end{tableau}
+\end{multicols}
+
+\vspace{.4cm}
+\textbf{Strict Conditional\\}
+A $\strictif$ B $\leftrightarrow$ $\square$(A $\supset$ B)
+
+\pagebreak
+
+\textbf{K3, L3, LP, RM3}\\
+
+\begin{multicols}{2}
+%K3
+\textbf{K3} - designated truth value = 1\\
+\textit{i=neither true nor false}\\
+\begin{tabular}{|c|c|c|c|}
+\hline
+	$\supset$  & 1 & i & 0\\
+\hline
+	1 & 1 & i & 0\\
+\hline
+	i & 1 & i & i\\
+\hline
+	0 & 1 & 1 & 1\\
+\hline
+\end{tabular}
+\vspace{.5cm}
+
+%L3
+\textbf{L3} - designated truth value = 1\\
+\textit{i=neither true nor false}\\
+\begin{tabular}{|c|c|c|c|}
+\hline
+	$\supset$  & 1 & i & 0\\
+\hline
+	1 & 1 & i & 0\\
+\hline
+	i & 1 & 1 & i\\
+\hline
+	0 & 1 & 1 & 1\\
+\hline
+\end{tabular}
+\vspace{.5cm}
+
+%LP
+\textbf{LP} - designated truth values = 1, i\\
+\textit{i=both true and false}\\
+\begin{tabular}{|c|c|c|c|}
+\hline
+	$\supset$  & 1 & i & 0\\
+\hline
+	1 & 1 & i & 0\\
+\hline
+	i & 1 & i & i\\
+\hline
+	0 & 1 & 1 & 1\\
+\hline
+\end{tabular}
+\vspace{.5cm}
+
+%RM3
+\textbf{RM3} - designated truth values = 1, i\\
+\textit{i=both true and false}\\
+\begin{tabular}{|c|c|c|c|}
+\hline
+	$\supset$  & 1 & i & 0\\
+\hline
+	1 & 1 & 0 & 0\\
+\hline
+	i & 1 & i & 0\\
+\hline
+	0 & 1 & 1 & 1\\
+\hline
+\end{tabular}
+\end{multicols}
+\vspace{.5cm}
+
+
 
 \end{document}
